@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Projects</h1>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="openAddProjectModal()">Add Project</button>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Link</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">ISOCode</th>
+          <th scope="col">PictureUri</th>
+          <th scope="col">IsPremium</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.id }}</td>
+          <td>{{ project.name }}</td>
+          <td>{{ project.link }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.category }}</td>
+          <td>{{ project.isoCode }}</td>
+          <td>{{ project.pictureUri }}</td>
+          <td>{{ project.isPremium }}</td>
+          <td><button type="button" class="btn btn-primary" (click)="openDeleteProjectModal(project.id)">D</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

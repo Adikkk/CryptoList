@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Add Project</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" id="name" formControlName="name">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.name.errors?.required">Name is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="link">Link</label>
+        <input class="form-control" id="link" formControlName="link">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">link is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="description" formControlName="description">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">Description is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input class="form-control" id="category" formControlName="category">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">Category is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="isoCode">ISOCode</label>
+        <input class="form-control" id="isoCode" formControlName="isoCode">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">ISOCode is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="pictureUri">pictureUri</label>
+        <input class="form-control" id="pictureUri" formControlName="pictureUri">
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">Picture Url is required.</div>
+      </div>
+      <div class="form-group">
+        <label for="isPremium">IsPremium</label>
+        <select class="form-control" id="isPremium" formControlName="isPremium" required>
+          <option value="">Please choose one</option> 
+          <option [ngValue]="false" [selected]="true">False</option>
+          <option [ngValue]="true">True</option>
+        </select>
+        <div class="text-danger" id="floatingInput" *ngIf="isSubmitted && f.link.errors?.required">Premium is required.</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>

@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="small-box">
+        <div class="inner">
+          <p>Total sites count: {{ totalSitesCount }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" [routerLink]="['/projects']" routerLinkActive="router-link-active" >Projects</button>
